@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .error {
+        color: red;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-lite@4.17.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm//vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "hconcat": [{"data": {"name": "data-d4307fa61d5837f5c1e18c0475c7e1e8"}, "facet": {"column": {"field": "Marcaje", "type": "nominal"}}, "spec": {"layer": [{"mark": {"type": "bar", "opacity": 0.6}, "encoding": {"color": {"field": "Etiqueta", "scale": {"range": ["red", "blue", "green", "black"]}, "type": "nominal"}, "x": {"field": "Etiqueta", "sort": "-y", "title": null, "type": "nominal"}, "y": {"field": "Conteo", "type": "quantitative"}}}, {"mark": {"type": "text", "dy": -5}, "encoding": {"color": {"field": "Etiqueta", "scale": {"range": ["red", "blue", "green", "black"]}, "type": "nominal"}, "text": {"field": "Conteo", "type": "quantitative"}, "x": {"field": "Etiqueta", "sort": "-y", "title": null, "type": "nominal"}, "y": {"field": "Conteo", "type": "quantitative"}}}], "height": 300, "width": 200}}, {"layer": [{"mark": {"type": "text", "color": "black", "dy": -5}, "encoding": {"text": {"field": "Conteo", "type": "quantitative"}, "x": {"field": "Marcaje", "title": null, "type": "nominal"}, "y": {"field": "Conteo", "type": "quantitative"}}}, {"mark": {"type": "bar", "opacity": 0.6}, "encoding": {"color": {"field": "Marcaje", "scale": {"range": ["black"]}, "type": "nominal"}, "x": {"field": "Marcaje", "title": null, "type": "nominal"}, "y": {"field": "Conteo", "type": "quantitative"}}}], "data": {"name": "data-b925139224fb6e062ab3c645972b3e56"}, "height": 300, "width": 50}], "title": "Conteo de nucleos en Taiep2_6m_PLV_BrdU488_GFAP555_SOX2647_25X (1)", "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json", "datasets": {"data-d4307fa61d5837f5c1e18c0475c7e1e8": [{"Marcaje": "Verde", "Etiqueta": "Negativo", "Conteo": 94}, {"Marcaje": "Verde", "Etiqueta": "Positivo", "Conteo": 83}, {"Marcaje": "Verde", "Etiqueta": "Duda", "Conteo": 11}, {"Marcaje": "Rojo", "Etiqueta": "Negativo", "Conteo": 137}, {"Marcaje": "Rojo", "Etiqueta": "Positivo", "Conteo": 40}, {"Marcaje": "Rojo", "Etiqueta": "Duda", "Conteo": 11}, {"Marcaje": "IR", "Etiqueta": "Negativo", "Conteo": 85}, {"Marcaje": "IR", "Etiqueta": "Positivo", "Conteo": 92}, {"Marcaje": "IR", "Etiqueta": "Duda", "Conteo": 11}], "data-b925139224fb6e062ab3c645972b3e56": [{"Marcaje": "Total", "Conteo": 188}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div class="error" style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

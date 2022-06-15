@@ -1,0 +1,15 @@
+clear variables; close all; clc;
+% Paramametros que el usuario debe ingresar
+
+%Colocar el nombre del archivo (sin extension)
+%Se asume que existe el archivo .czi y está colocado 
+%en la carpeta Color_channels/Images
+file_name = 'Taiep2_6m_PLV_BrdU488_GFAP555_SOX2647_25X (1)';
+%El verbose en estado True es para 
+verbose = false;
+
+% Funciones que realizan el conteo
+%cd ..; cd Color_channels;
+%FuncionSepararCanales(file_name);
+cd ..; cd scripts;
+ContarCelulas(file_name,verbose);
