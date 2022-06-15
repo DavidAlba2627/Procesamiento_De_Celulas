@@ -13,8 +13,8 @@ verbose = false;
 %Las siguientes lineas realizan una separacion en canales de la imagen
 %original con extension .czi, generando archivos en formato .tif, estos se
 %guardan en la carpeta Cell_images
-%cd ..; cd Color_channels;
-%FuncionSepararCanales(file_name);
+cd Color_channels;
+FuncionSepararCanales(file_name);
 
 %Las siguientes lineas realizan el proceso de analis de las imagenes
 %Los resultados se guardan en la carpeta Tablas_de_estadisticas

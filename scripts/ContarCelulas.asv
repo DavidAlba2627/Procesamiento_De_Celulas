@@ -246,7 +246,7 @@ cd ..; cd ..; cd scripts;
 [Im_Class_3, Tabla_Propiedades_Marcaje_3] = Clasificar_Celulas(Celulas_Divididas, Celulas_Duda, Im_Canal3_seg,  Im1_C, Im_Canal3_gris);
 title(strcat("Clasificacion sobre el marcaje ",nombres(3)),'Fontsize',15);
 cd ..; cd Resultados; cd (Archivo);
-saveas(gcf,strcat("Clasificacion sobre el marcaje ",nombres(3),".png"));
+saveas(gcf,strcat("Clasificacion sobre el marcaje ",nombres(1),".png"));
 cd ..; cd ..; cd scripts;
 
 
@@ -348,11 +348,9 @@ Expresion_canal1_canal2 = Crear_Tabla_Pos_Neg(Archivo, L4, Tabla_Propiedades_Mar
 Expresion_canal1_canal3 = Crear_Tabla_Pos_Neg(Archivo, L4, Tabla_Propiedades_Marcaje_1, Tabla_Propiedades_Marcaje_3, nombres(1), nombres(3), verbose);
 Expresion_canal2_canal3 = Crear_Tabla_Pos_Neg(Archivo, L4, Tabla_Propiedades_Marcaje_2, Tabla_Propiedades_Marcaje_3, nombres(2), nombres(3), verbose);
 
-ID_Canales = table(nombres, [1;2;3]);
-ID_Canales.Properties.VariableNames = {'Marcaje', 'ID'};
-
 %Creando la carpeta que contendra las tablas con las estadisticas
 cd ..; cd Resultados;
+
 %Creando las tablas dentro de esa carpeta
 cd (Archivo);
 writetable(Conteo_general, strcat('Conteo_general_',Archivo,'.csv'));
@@ -363,7 +361,6 @@ writetable(Tabla_Propiedades_Marcaje_3, strcat('Tabla_Propiedades_Marcaje_3_',Ar
 writetable(Expresion_canal1_canal2, strcat('Expresion_canal1_canal2_',Archivo,'.csv'));
 writetable(Expresion_canal1_canal3, strcat('Expresion_canal1_canal3_',Archivo,'.csv'));
 writetable(Expresion_canal2_canal3, strcat('Expresion_canal2_canal3_',Archivo,'.csv'));
-writetable(ID_Canales, strcat('ID_Canales_',Archivo,'.csv'));
 
 end
 
