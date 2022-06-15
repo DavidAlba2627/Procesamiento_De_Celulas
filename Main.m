@@ -4,7 +4,7 @@ clear variables; close all; clc;
 %Colocar el nombre del archivo (sin extension)
 %Se asume que existe el archivo .czi y está colocado 
 %en la carpeta Color_channels/Images
-file_name = 'Taiep2_6m_PLV_BrdU488_GFAP555_SOX2647_25X (1)';
+file_name = 'SD1_6m_PLV_BrdU488_GFAP555_SOX2647_25X (1)';
 %El verbose en estado True es para mostrar imagenes de pasos intermedios
 verbose = false;
 
